@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo puppet apply manifests/site.pp \
+    --modulepath modules/:modules/3rd-party/ $*

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+files=$( find manifests modules -type f | grep \.pp$ | grep -v 3rd-party )
+exit_status=0
+
+for f in $files; do
+    # errors=$( puppet-lint $f --no-80chars-check --no-arrow_alignment-check --no-documentation-check --no-autoloader_layout-check )
+    errors=$( puppet-lint $f --no-80chars-check --no-arrow_alignment-check --no-documentation-check )
+    if [[ $errors != '' ]]; then
+        echo "$f:"
+        echo $errors
+        echo
+        exit_status=1
+    fi
+done
+
+exit $exit_status

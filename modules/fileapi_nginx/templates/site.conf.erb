@@ -1,0 +1,19 @@
+# This file is managed by Puppet - all changes will be overwritten.
+
+server {
+    server_name             <%= @baseHost %>;
+    listen                  80;
+    root                    /home/fileapi/project/site/current/dist;
+    client_max_body_size    20k;
+    server_tokens           off;
+    access_log              off;
+    error_log               /home/fileapi/logs/site-error.log error;
+
+    if ($request_method != "GET" ) {
+        return 405;
+    }
+
+    location ~ ^/$ {
+        rewrite ^ /index.html break;
+    }
+}
