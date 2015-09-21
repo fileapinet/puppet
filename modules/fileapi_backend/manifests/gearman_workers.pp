@@ -13,4 +13,6 @@ class fileapi_backend::gearman_workers {
     fileapi_backend::gearman_worker { 'FileApiWorkerBundleWorkersConvertTtfFontWorker': }
     fileapi_backend::gearman_worker { 'FileApiWorkerBundleWorkersScreenshotWebPageWorker': }
     fileapi_backend::gearman_worker { 'FileApiWorkerBundleWorkersWatermarkImageWorker': }
+    fileapi_backend::gearman_worker { 'FileApiWorkerBundleWorkersPgnParserWorker': }
+    fileapi_backend::gearman_worker { 'FileApiWorkerBundleWorkersDetectPornWorker': }
 }

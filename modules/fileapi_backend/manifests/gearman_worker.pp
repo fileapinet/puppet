@@ -9,6 +9,7 @@ define fileapi_backend::gearman_worker() {
         command     => "/home/fileapi/project/api/current/bin/workers/start-one ${name} ${symfonyEnvironment}",
         redirect_stderr => true,
         stdout_logfile => "/home/fileapi/project/api/current/var/logs/${symfonyEnvironment}_supervisor_${name}.log",
+        stderr_logfile => "/home/fileapi/project/api/current/var/logs/${symfonyEnvironment}_supervisor_${name}.log",
         user        => 'fileapi',
         group       => 'fileapi',
         numprocs    => 1,
