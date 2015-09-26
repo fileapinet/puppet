@@ -7,7 +7,7 @@ map $host $apiEnvironment {
 }
 
 server {
-    server_name             api.<%= @baseHost %>;
+    server_name             api.<%= @baseHost %> demo-api.<%= @baseHost %>;
     listen                  80;
     root                    /home/fileapi/project/api/current/web;
     index                   app.php;
