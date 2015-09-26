@@ -3,6 +3,10 @@ class fileapi_nginx::site {
         template => 'fileapi_nginx/site.conf.erb',
     }
 
+    fileapi_nginx::website { 'www redirect':
+        template => 'fileapi_nginx/www.conf.erb',
+    }
+
     file { ['/home/fileapi/project/site',
             '/home/fileapi/project/site/current',
             ]:
